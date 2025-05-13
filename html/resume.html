@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RESUME | Ka Ying Chan</title>
+
+  <link rel="stylesheet" href="../css/resume.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- 1) Sticky hamburger & overlay menu (mobile only) -->
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="menu-container">
+    <nav class="nav-links">
+      <a href="index.html">PROJECT</a>
+      <a href="about.html">ABOUT</a>
+      <a href="resume.html" class="active">RESUME</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/kayingchan01" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://www.instagram.com/01_kyc" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- 2) Desktop-only navbar inside container -->
+  <div class="container">
+    <header class="navbar">
+      <nav class="nav-links">
+        <a href="index.html">PROJECT</a>
+        <a href="about.html">ABOUT</a>
+        <a href="resume.html" class="active">RESUME</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/kayingchan01" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/01_kyc" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </header>
+
+    <main class="content">
+      <h1>RESUME</h1>
+      <div class="resume-wrapper">
+        <img src="../src/resume.jpg" alt="Ka Ying (Kelly) Chan — Resume" />
+      </div>
+    </main>
+
+    <footer class="footer">
+      © 2025 Ka Ying (Kelly) Chan
+    </footer>
+  </div>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu   = document.querySelector('.menu-container');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

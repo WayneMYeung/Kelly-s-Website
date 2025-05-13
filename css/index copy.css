@@ -1,0 +1,339 @@
+/* 1) Custom Fonts */
+@font-face {
+  font-family: 'FuturaMedium';
+  src: url('../fonts/futura medium bt.ttf') format('truetype');
+  font-weight: 500; font-style: normal;
+}
+@font-face {
+  font-family: 'FuturaLight';
+  src: url('../fonts/futura light bt.ttf') format('truetype');
+  font-weight: 400; font-style: normal;
+}
+@font-face {
+  font-family: 'FuturaLightItalic';
+  src: url('../fonts/Futura Light Italic font.ttf') format('truetype');
+  font-weight: 400; font-style: italic;
+}
+@font-face {
+  font-family: 'FuturaBold';
+  src: url('../fonts/Futura Bold font.ttf') format('truetype');
+  font-weight: 400; font-style: italic;
+}
+
+:root {
+  /* tweak these to taste: 
+     --hamburger-top in vh, --hamburger-left in vw */
+  --hamburger-top: 3vh;
+  --hamburger-left: 5vw;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2) Reset & Body */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'FuturaLight', sans-serif;
+  background: #1e1e1e;
+  color: white;
+}
+
+/* 3) HERO (full-bleed) */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background: url('../src/hero-home.jpg') center/cover no-repeat;
+  overflow: hidden;
+}
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.65);
+}
+
+/* 4) Navbar on Hero */
+.hero .navbar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px 60px;
+  padding-top: 40px;
+  margin-bottom: 40px;  
+  z-index: 5;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2vw;
+  letter-spacing: 2px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1vw;
+  font-weight: 500;
+}
+
+.nav-links a.active {
+  font-weight: 700;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 24px;
+  margin: 0 1vw;
+}
+
+/* ———————————————————————— */
+/* Base hamburger styles */
+/* ———————————————————————— */
+.menu-toggle {
+  display: none;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* 5) Hero Text & Arrow */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 8%;                     /* shift left off exact center */
+  transform: translateY(-50%);
+  z-index: 2;
+  max-width: 400px;             /* cap the width of the text block */
+}
+
+.hero-content h1 {
+  font-family: 'FuturaMedium';
+  /* fluid font: min 4rem up to 8rem, scaling with viewport */
+  font-size: 3vw;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: 0.8vw;       /* tight, chunky spacing */
+  z-index: 3;
+}
+
+.hero-subtitle {
+  font-family: 'FuturaLight';
+  font-style: normal;           /* remove any italic */
+  /* fluid subtitle size */
+  font-size: 1.2vw;
+  line-height: 1.4;
+  margin-top: 1rem;
+  letter-spacing: 0.2rem;
+  text-transform: none;
+  color: #eee;
+  z-index: 3;
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  .hero-content {
+    left: 5%;
+    max-width: 90%;
+  }
+  .hero-content h1 {
+    font-size: 2vw;
+    letter-spacing: 0.3rem;
+  }
+  .hero-subtitle {
+    font-size: 0.8vw;
+    letter-spacing: 0.1rem;
+  }
+}
+
+/* make hero-arrow target the <a> now */
+.hero-arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-decoration: none;     /* no underline */
+}
+
+.hero-arrow i {
+  font-size: 24px;
+  color: white;
+  /* you can add a hover state if you like */
+  transition: transform 0.2s ease;
+}
+
+.hero-arrow:hover i {
+  transform: translateY(-50%) scale(1.5);
+}
+/* 6) GALLERY GRID */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 7) HOVER OVERLAY */
+.item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 31, 31, 0.7);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 0.3s ease;
+}
+.gallery-item:hover .item-overlay {
+  opacity: 1;
+}
+.item-overlay h3 {
+  font-family: 'FuturaBold';
+  font-style: bold;
+  text-transform: uppercase;
+  transform: scaleY(0.75);
+  transform-origin: middle;
+  font-size: 3vw;
+  color: white;
+  line-height: 90%;
+  letter-spacing: 0.5vw;
+}
+.item-overlay p {
+  font-family: 'FuturaMedium';
+  font-size: 1.2vw;
+  text-transform: uppercase;
+  color: #ddd;
+  margin-top: 2vw;
+  letter-spacing: 0.3vw;
+}
+
+/* 8) FOOTER */
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 1.1vh;
+  color: #8a8a8a;
+}
+
+/* 9) RESPONSIVE */
+@media (max-width: 768px) {
+  .hero { height: 50vh; }
+  .hero-content {
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .hero-content h1 { font-size: 48px; }
+  .hero-content p { font-size: 16px; }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 4.3vh;      /* match your header’s top padding */
+    left: 6.6vw;     /* stick it to the left */
+    margin: 0;      /* kill the auto-margin that pushed it right */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3vh;
+    cursor: pointer;
+    z-index: 10;    /* above everything else */
+  }
+
+  .menu-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1e1e1e;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1vh 0;
+    padding-top: 10vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 10;
+  }
+
+  .menu-container {
+    display: none;
+    position: absolute;
+    top: 0;         /* start right at the top of the hero */
+    left: 0;
+    width: 100%;
+    height: 100vh;  /* optionally fill the screen */
+    background: rgba(20, 20, 20, 0.95);
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 70px; /* push the links down below the toggle */
+    overflow-y: auto;  /* in case the list is tall */
+    z-index: 9;
+  }
+
+  .navbar.active .menu-container {
+    display: flex;               /* dropdown when active */
+  }
+
+  /* stack links & icons */
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .social-icons {
+    justify-content: center;
+    gap: 2rem;
+  }
+  /* stack navbar items and shrink text/icons */
+  .navbar {
+    position: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .nav-links a {
+    font-size: 2vh;
+    letter-spacing: 1px;
+  }
+  .social-icons a {
+    font-size: 2.5vh;
+  }
+}
+

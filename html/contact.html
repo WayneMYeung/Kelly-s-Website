@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LET’S CONNECT | Ka Ying Chan</title>
+
+  <!-- your stylesheet -->
+  <link rel="stylesheet" href="../css/contact.css" />
+  <!-- font-awesome for icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- =================================================================== -->
+  <!-- 1) Sticky hamburger & overlay menu (mobile only)                    -->
+  <!-- =================================================================== -->
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div class="menu-container">
+    <nav class="nav-links">
+      <a href="index.html">PROJECT</a>
+      <a href="about.html">ABOUT</a>
+      <a href="resume.html">RESUME</a>
+      <a href="contact.html" class="active">CONTACT</a>
+    </nav>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/kayingchan01" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://www.instagram.com/01_kyc" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- 2) Desktop‐only header inside your .container                        -->
+  <!-- =================================================================== -->
+  <div class="container">
+    <header class="navbar">
+      <nav class="nav-links">
+        <a href="index.html">PROJECT</a>
+        <a href="about.html">ABOUT</a>
+        <a href="resume.html">RESUME</a>
+        <a href="contact.html" class="active">CONTACT</a>
+      </nav>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/kayingchan01" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/01_kyc" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </header>
+
+    <main class="content">
+      <h1>LET’S CONNECT</h1>
+      <p class="description">
+        Whether you're interested in collaborating on a project<br class="desktop-only">
+        or simply want to say hello, I’d love to hear from you.
+      </p>
+
+      <div class="contact-list">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:01.kayingchan@gmail.com">01.kayingchan@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin-in"></i>
+          <a href="https://www.linkedin.com/in/kayingchan01" target="_blank">
+            www.linkedin.com/in/kayingchan01
+          </a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-instagram"></i>
+          <a href="https://www.instagram.com/01_kyc" target="_blank">
+            https://www.instagram.com/01_kyc
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      © 2025 Ka Ying (Kelly) Chan
+    </footer>
+  </div>
+
+  <!-- toggle script -->
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu   = document.querySelector('.menu-container');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ABOUT | Ka Ying Chan</title>
+  <link rel="stylesheet" href="../css/about.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <!-- 1) Sticky hamburger & overlay menu -->
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="menu-container">
+    <nav class="nav-links">
+      <a href="index.html">PROJECT</a>
+      <a href="about.html" class="active">ABOUT</a>
+      <a href="resume.html">RESUME</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/kayingchan01" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://www.instagram.com/01_kyc" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+  <!-- HERO (full‐width, no side padding) -->
+  <section class="hero">
+    <div class="overlay"></div>
+
+    <!-- navbar sits over the image -->
+    <header class="navbar">
+      <nav class="nav-links">
+        <a href="index.html">PROJECT</a>
+        <a href="about.html" class="active">ABOUT</a>
+        <a href="resume.html">RESUME</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/kayingchan01" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/01_kyc" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- hero text -->
+    <div class="hero-content">
+        <div class="hero-left">
+          <h1>ABOUT<br/>ME</h1>
+        </div>
+        <div class="hero-right">
+          <p>
+            Hi, I’m <b>Ka Ying (Kelly) Chan</b>, a creative professional passionate about visual storytelling. 
+            I specialize in video editing, production support, and social media strategy. With 
+            hands-on experience in studio, campaign, and international projects, I bring both creativity 
+            and coordination to every frame.
+          </p>
+        </div>
+      </div>
+      <a href="#gallery" class="hero-arrow mobile-only">
+        <i class="fas fa-chevron-down"></i>
+      </a>      
+  </section>
+
+  <!-- MAIN CONTENT (padded) -->
+  <main class="container" id="gallery">
+    <!-- EDUCATION -->
+    <section class="section">
+      <div class="section-label">EDUCATION</div>
+      <div class="section-item">
+        <h2>University of Toronto (Canada)</h2>
+        <ul>
+          <li>Communication, Culture, Information &amp; Technology</li>
+          <li>Psychology</li>
+        </ul>
+      </div>
+      <div class="section-item">
+        <h2>Sheridan College (Canada)</h2>
+        <ul><li>Certificate in Digital Communication</li></ul>
+      </div>
+      <div class="section-item">
+        <h2>Chulalongkorn University (Thailand)</h2>
+        <ul><li>Exchange Program in Communication Management</li></ul>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section">
+      <div class="section-label">SKILLS</div>
+      <div class="section-item">
+        <h2>Editing &amp; Design Tools</h2>
+        <ul>
+          <li>Adobe Premiere Pro, Capcut</li>
+          <li>Adobe Photoshop, Illustrator, Procreate, Canva, Figma</li>
+        </ul>
+      </div>
+      <div class="section-item">
+        <h2>Media &amp; Production</h2>
+        <ul><li>Camera Operation, Post-production</li></ul>
+      </div>
+      <div class="section-item">
+        <h2>Digital Marketing</h2>
+        <ul><li>Content Creation, Social Media Strategy</li></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (padded with container margins) -->
+  <footer class="footer">
+    © 2025 Ka Ying (Kelly) Chan
+  </footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu   = document.querySelector('.menu-container');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

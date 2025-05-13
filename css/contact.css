@@ -1,0 +1,256 @@
+/* ===================================== */
+/* 1) Custom Fonts                       */
+/* ===================================== */
+@font-face {
+  font-family: 'FuturaMedium';
+  src: url('../fonts/futura medium bt.ttf') format('truetype');
+  font-weight: 500; font-style: normal;
+}
+@font-face {
+  font-family: 'FuturaLight';
+  src: url('../fonts/futura light bt.ttf') format('truetype');
+  font-weight: 400; font-style: normal;
+}
+@font-face {
+  font-family: 'FuturaLightItalic';
+  src: url('../fonts/Futura Light Italic font.ttf') format('truetype');
+  font-weight: 400; font-style: normal;
+}
+
+/* ===================================== */
+/* 2) Reset & Base Styles                */
+/* ===================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'FuturaLight', sans-serif;
+  background-color: #1e1e1e;
+  color: white;
+  overflow-x: hidden; /* prevent horizontal scroll on menu */
+}
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================== */
+/* 3) Sticky hamburger & full‐screen menu */
+/* ===================================== */
+.menu-toggle {
+  display: none; /* show only on mobile */
+  position: fixed;
+  top: 3vh;       /* tweak as needed */
+  left: 5vw;      /* tweak as needed */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3vh;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.menu-container {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(20, 20, 20, 0.95);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 999;
+}
+
+.menu-container.active {
+  display: flex;
+}
+
+.menu-container .nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.menu-container .nav-links a {
+  font-size: 2.5vh;
+  font-weight: 500;
+}
+.menu-container .nav-links a.active {
+  font-weight: 700;
+}
+
+.menu-container .social-icons {
+  display: flex;
+  gap: 2rem;
+}
+.menu-container .social-icons a {
+  font-size: 3vh;
+}
+
+/* ===================================== */
+/* 4) Container & desktop navbar         */
+/* ===================================== */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 60px 60px;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2vw;
+  letter-spacing: 2px;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 1vw;
+  font-weight: 500;
+}
+
+.nav-links a.active {
+  font-weight: 700;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icons a {
+  font-size: 24px;
+  margin: 0 1vw;
+}
+
+/* ===================================== */
+/* 5) Content & contact-list             */
+/* ===================================== */
+.content {
+  text-align: center;
+  margin-top: 20vh;
+}
+.content h1 {
+  font-size: 3vw;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 3vh;
+}
+.description {
+  font-family: 'FuturaLightItalic';
+  font-size: 1vw;
+  margin-bottom: 4vh;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1vw;
+  letter-spacing: 1px;
+}
+.contact-item i {
+  font-size: 28px;
+  width: 28px;
+  text-align: center;
+}
+
+/* ===================================== */
+/* 6) Footer                             */
+/* ===================================== */
+.footer {
+  margin-top: auto;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 1.1vh;
+  color: #8a8a8a;
+}
+
+/* ===================================== */
+/* 7) Responsive: show sticky menu & hide desktop nav */
+/* ===================================== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  /* hide the header‐based nav */
+  .navbar {
+    display: none;
+  }
+  .menu-container {
+    text-align: center;
+  }
+  .menu-container .nav-links {
+    gap: 3vh;
+  }
+  /* tighten container padding (if you like) */
+  .container {
+    padding: 1.8vh 5.1vw;
+  }
+  /* adjust content top margin */
+  .content {
+    margin-top: 20vh;
+    padding: 4vh 20px;
+  }
+  .content h1 {
+    font-size: 4.5vh;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+  }
+  /* bring content up and scale down heading */
+  .description {
+    font-size: 1.8vh;
+    margin-bottom: 3rem;
+    margin-top: 10vh;
+    max-width: 80vw;
+    margin: 0 auto 0;
+  }
+  br.desktop-only {
+    display: none;
+  }
+
+/* Contact Items */
+
+  .contact-list {
+    gap: 20px;
+    margin-top: 10vh;
+  }
+  .contact-item {
+    flex-direction: row;      /* ← horizontal layout */
+    justify-content: center;  /* ← center them */
+    align-items: center;
+    gap: 3vw;                 /* ← a little space between icon & text */
+    text-align: left;         /* ← if you prefer link text left-aligned */
+  }
+  .contact-item i {
+    /* remove the bottom margin you added before */
+    margin: 0;
+    font-size: 6vw;
+  }
+  .contact-item a {
+    font-size: 1.8vh;
+    letter-spacing: 0.5px;
+  }
+}

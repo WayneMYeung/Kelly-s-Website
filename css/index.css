@@ -1,0 +1,351 @@
+/* ===================================== */
+/* 1) Custom Fonts                       */
+/* ===================================== */
+@font-face {
+  font-family: 'FuturaMedium';
+  src: url('../fonts/futura medium bt.ttf') format('truetype');
+  font-weight: 500; font-style: normal;
+}
+@font-face {
+  font-family: 'FuturaLight';
+  src: url('../fonts/futura light bt.ttf') format('truetype');
+  font-weight: 400; font-style: normal;
+}
+@font-face {
+  font-family: 'FuturaLightItalic';
+  src: url('../fonts/Futura Light Italic font.ttf') format('truetype');
+  font-weight: 400; font-style: italic;
+}
+@font-face {
+  font-family: 'FuturaBold';
+  src: url('../fonts/Futura Bold font.ttf') format('truetype');
+  font-weight: 400; font-style: italic;
+}
+
+/* ===================================== */
+/* 2) Reset & Base Styles                */
+/* ===================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'FuturaLight', sans-serif;
+  background: #1e1e1e;
+  color: white;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================== */
+/* 3) HERO (full-bleed)                  */
+/* ===================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background: url('../src/hero-home.jpg') center/cover no-repeat;
+  overflow: hidden;
+}
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20,20,20,0.65);
+}
+
+/* ===================================== */
+/* 4) Sticky hamburger & full-screen menu */
+/* ===================================== */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 3vh;
+  left: 5vw;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3vh;
+  z-index: 1000;
+  cursor: pointer;
+}
+.menu-container {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(20,20,20,0.95);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 999;
+}
+.menu-container.active {
+  display: flex;
+}
+.menu-container .nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.menu-container .nav-links a {
+  font-size: 2.5vh;
+  font-weight: 500;
+}
+.menu-container .nav-links a.active {
+  font-weight: 700;
+}
+.menu-container .social-icons {
+  display: flex;
+  gap: 2rem;
+}
+.menu-container .social-icons a {
+  font-size: 3vh;
+}
+
+/* ===================================== */
+/* 5) Desktop navbar inside HERO         */
+/* ===================================== */
+.hero .navbar {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* match your About page exactly: */
+  padding: 60px 60px;
+  z-index: 5;
+}
+.nav-links {
+  display: flex;
+  gap: 2vw;
+  letter-spacing: 2px;
+}
+.nav-links a {
+  color: white;
+  font-size: 1vw;
+  font-weight: 500;
+}
+.nav-links a.active {
+  font-weight: 700;
+}
+.social-icons {
+  display: flex;
+}
+.social-icons a {
+  font-size: 24px;
+  margin: 0 1vw;
+}
+
+/* ===================================== */
+/* 6) Hero Text & Arrow                  */
+/* ===================================== */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 8%;                     /* shift left off exact center */
+  transform: translateY(-50%);
+  z-index: 2;
+  max-width: 400px;             /* cap the width of the text block */
+}
+
+.hero-content h1 {
+  font-family: 'FuturaMedium';
+  /* fluid font: min 4rem up to 8rem, scaling with viewport */
+  font-size: 3vw;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: 0.8vw;       /* tight, chunky spacing */
+  z-index: 3;
+}
+
+.hero-subtitle {
+  font-family: 'FuturaLight';
+  font-style: normal;           /* remove any italic */
+  /* fluid subtitle size */
+  font-size: 1.2vw;
+  line-height: 1.4;
+  margin-top: 1rem;
+  letter-spacing: 0.2rem;
+  text-transform: none;
+  color: #eee;
+  z-index: 3;
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  .hero-content {
+    left: 5%;
+    max-width: 90%;
+  }
+  .hero-content h1 {
+    font-size: 2vw;
+    letter-spacing: 0.3rem;
+  }
+  .hero-subtitle {
+    font-size: 0.8vw;
+    letter-spacing: 0.1rem;
+  }
+}
+
+/* make hero-arrow target the <a> now */
+.hero-arrow {
+  /* keep your existing positioning */
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  /* add the looping bounce */
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+.hero-arrow i {
+  font-size: 24px;
+  color: white;
+  /* you can add a hover state if you like */
+  transition: transform 0.2s ease;
+}
+
+.hero-arrow:hover i {
+  transform: translateY(-50%) scale(1.5);
+}
+
+/* ===================================== */
+/* 7) Gallery grid & overlays            */
+/* ===================================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 31, 31, 0.7);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 0.3s ease;
+}
+.gallery-item:hover .item-overlay {
+  opacity: 1;
+}
+.item-overlay h3 {
+  font-family: 'FuturaBold';
+  font-style: bold;
+  text-transform: uppercase;
+  transform: scaleY(0.75);
+  transform-origin: middle;
+  font-size: 3vw;
+  color: white;
+  line-height: 90%;
+  letter-spacing: 0.5vw;
+}
+.item-overlay p {
+  font-family: 'FuturaMedium';
+  font-size: 1.2vw;
+  text-transform: uppercase;
+  color: #ddd;
+  margin-top: 2vw;
+  letter-spacing: 0.3vw;
+}
+
+
+/* ===================================== */
+/* 8) Footer                             */
+/* ===================================== */
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 1.1vh;
+  color: #8a8a8a;
+}
+
+/* ===================================== */
+/* 9) Responsive (≤768px)                */
+/* ===================================== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .menu-container {
+    text-align: center;
+  }
+  .menu-container .nav-links {
+    gap: 3vh;
+  }
+  .hero .navbar {
+    display: none;
+  }
+  .hero {
+    height: 100vh;
+  }
+  .hero-content {
+    left: 10%;
+    max-width: 90%;
+  }
+  .hero-content h1 {
+    font-size: 6vh;
+    letter-spacing: 3vw;
+  }
+  .hero-subtitle {
+    font-size: 4vw;
+    letter-spacing: 1vw;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .item-overlay h3 {
+    font-family: 'FuturaBold';
+    font-size: 8vw;
+    line-height: 90%;
+    letter-spacing: 0.5vw;
+  }
+  .item-overlay p {
+    font-size: 4vw;
+    margin-top: 2.5vh;
+    letter-spacing: 0.3vw;
+  }
+}

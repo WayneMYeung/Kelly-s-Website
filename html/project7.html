@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DAYS OF BEING WILD - REMAKE | Ka Ying Chan</title>
+  <link rel="stylesheet" href="../css/project1.css"/>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+    <!-- =================================================================== -->
+    <!-- 1) Sticky hamburger & overlay menu (mobile only)                    -->
+    <!-- =================================================================== -->
+    <button class="menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="menu-container">
+        <nav class="nav-links">
+        <a href="index.html">PROJECT</a>
+        <a href="about.html">ABOUT</a>
+        <a href="resume.html">RESUME</a>
+        <a href="contact.html" class="active">CONTACT</a>
+        </nav>
+        <div class="social-icons">
+        <a href="https://www.linkedin.com/in/kayingchan01" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/01_kyc" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        </div>
+    </div>
+    <div class="header"> 
+        <!-- NAVBAR -->
+        <header class="navbar">
+            <nav class="nav-links">
+                <a href="index.html">PROJECT</a>
+                <a href="about.html">ABOUT</a>
+                <a href="resume.html">RESUME</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/kayingchan01" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/01_kyc" target="_blank">
+                <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            </header>
+    </div> 
+    <div class="container">
+        <!-- PAGE TITLE & ROLE -->
+        <h1 class="project-title">BLACK MYTH</h1>
+
+        <!-- Cover IMG -->
+        <div class="project-img">
+            <img src="../src/project7/project7-1.jpg" alt="Still frame 1">
+        </div>
+
+        <!-- METADATA -->
+        <dl class="project-meta">
+        <dt>Type:</dt>
+        <dd>Photography</dd>
+        <dt>DESCRIPTION:</dt>
+        <dd>
+            Black Myth is a stylised photography project inspired by the rich visual language of the game Black Myth: Wukong. Set in a theatrical, mythic environment, the shoot explores themes of identity, illusion, and transformation through costume, symbolic props, and moody lighting.
+        </dd>
+        <dt>Credit:</dt>
+        <dd>Event organizer: Wizard’s Lens, Siruplum Studio<br>Model: Bobby</dl>
+
+        <!-- STILLS GALLERY -->
+        <section class="project-gallery">
+        <img src="../src/project7/project7-2.jpg" alt="Still frame 2">
+        <img src="../src/project7/project7-3.jpg" alt="Still frame 3">
+        <img src="../src/project7/project7-4.jpg" alt="Still frame 4">
+        <!-- <img src="../src/project7/project7-5.jpg" alt="Still frame 5"> -->
+        </section>
+        <!-- <section class="creative-workflow">
+            <div class="subsection-label">CREATIVE WORKFLOW</div>
+            <div class="workflow-grid">
+                <img src="../src/project7/project7-5.jpg" alt="Still frame 5">
+                <img src="../src/project7/project7-6.jpg" alt="Still frame 6" class="frame6-crop">
+                <img src="../src/project7/project7-7.jpg" alt="Still frame 7">
+                <img src="../src/project7/project7-8.jpg" alt="Still frame 8" class="frame8-crop">
+            </div>
+        </section> -->
+
+        <!-- FOOTER -->
+        <footer class="footer">
+        © 2025 Ka Ying (Kelly) Chan
+        </footer>
+    </div>
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const menu   = document.querySelector('.menu-container');
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('active');
+        });
+      </script>
+</body>
+</html>
