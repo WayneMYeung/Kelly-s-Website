@@ -48,42 +48,89 @@ a:hover {
   background: rgba(48, 48, 48, 0.75);
 }
 
-/* 4) Navbar over the hero */
+/* ===================================== */
+/* 4) Sticky hamburger & full-screen menu */
+/* ===================================== */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 3vh;
+  left: 5vw;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3vh;
+  z-index: 1000;
+  cursor: pointer;
+}
+.menu-container {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(20,20,20,0.95);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 999;
+}
+.menu-container.active {
+  display: flex;
+}
+.menu-container .nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.menu-container .nav-links a {
+  font-size: 2.5vh;
+  font-weight: 500;
+}
+.menu-container .nav-links a.active {
+  font-weight: 700;
+}
+.menu-container .social-icons {
+  display: flex;
+  gap: 2rem;
+}
+.menu-container .social-icons a {
+  font-size: 3vh;
+}
+
+/* ===================================== */
+/* 5) Desktop navbar inside HERO         */
+/* ===================================== */
 .hero .navbar {
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0; 
+  left: 0; 
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 41px 60px;
-  z-index: 2;
+  padding: 60px 60px;
+  z-index: 5;
 }
-
 .nav-links {
   display: flex;
   gap: 2vw;
   letter-spacing: 2px;
 }
-
 .nav-links a {
   color: white;
-  text-decoration: none;
   font-size: 1vw;
   font-weight: 500;
 }
-
 .nav-links a.active {
   font-weight: 700;
 }
-
 .social-icons {
   display: flex;
 }
-
 .social-icons a {
-  color: white;
   font-size: 24px;
-  margin: 1vw
+  margin: 0 1vw;
 }
 
 /* 5) Hero text centered vertically */
@@ -140,60 +187,6 @@ a:hover {
   .hero-arrow.mobile-only {
     display: none;
   }
-
-/* ===================================== */
-/* 6) Sticky hamburger & overlay menu    */
-/* ===================================== */
-.menu-toggle {
-  display: none;           /* mobile only */
-  position: fixed;
-  top: 3vh;
-  left: 5vw;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 3vh;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.menu-container {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(20,20,20,0.95);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 2rem;
-  z-index: 999;
-}
-
-.menu-container.active {
-  display: flex;
-}
-
-.menu-container .nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 3vh;
-}
-.menu-container .nav-links a {
-  font-size: 2.5vh;
-  font-weight: 500;
-}
-.menu-container .nav-links a.active {
-  font-weight: 700;
-}
-.menu-container .social-icons {
-  display: flex;
-  gap: 2rem;
-}
-.menu-container .social-icons a {
-  font-size: 3vh;
-}
 
 /* 6) Padded main container for rest of page */
 .container {
