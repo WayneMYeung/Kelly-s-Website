@@ -1,20 +1,39 @@
-/* 1) Custom Fonts (same as before) */
+/* ===================================== */
+/* 1) Custom Fonts                       */
+/* ===================================== */
 @font-face { font-family: 'FuturaMedium'; src: url('../fonts/futura medium bt.ttf') format('truetype'); }
 @font-face { font-family: 'FuturaLight'; src: url('../fonts/futura light bt.ttf') format('truetype'); }
 @font-face { font-family: 'FuturaLightItalic'; src: url('../fonts/Futura Light Italic font.ttf') format('truetype'); }
 
-/* 2) Base styles */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ===================================== */
+/* 2) Reset & Base Styles                */
+/* ===================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 html {
   scroll-behavior: smooth;
 }
 body {
+  font-family: 'FuturaLight', sans-serif;
   background: #1e1e1e;
   color: white;
-  font-family: 'FuturaLight', sans-serif;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-/* 3) HERO (full-width) */
+/* ===================================== */
+/* 3) HERO (full-bleed)                  */
+/* ===================================== */
 .hero {
   position: relative;
   width: 100%;
@@ -235,7 +254,7 @@ body {
 /* 8) Footer (flush with container width) */
 .footer {
   text-align: center;
-  font-size: 1.1vh;
+  font-size: 0.8vw;
   color: #8a8a8a;
   padding: 30px 0;
 }
